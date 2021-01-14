@@ -1,0 +1,82 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mesinminuman;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author User
+ */
+public class Mesinminuman {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //        Meggunakan java scanner
+        Scanner scan = new Scanner(System.in);
+//        menampilkan menu makanan
+        System.out.println("Menu Minuman : ");
+        System.out.println("___________");
+        System.out.println("No Nama             Harga");
+        System.out.println("1. Juice             Rp 10000,00");
+        System.out.println("2. Coffe             Rp 7000,00");
+        System.out.println("3. Air Putih         Rp 5000,00");
+        System.out.println("4. Minuman Soda      Rp 13000,00");
+        System.out.println("");
+//        declarasi harga awal
+        int harga = 0;
+//        decralasi harga menu
+        int h1 = 10000, h2 = 7000, h3 = 5000, h4 = 13000;
+        String menu;
+        for (String i = "Y"; i.equals("Y")||i.equals("y"); )
+        {
+        System.out.println("___________");
+//        pengguna memasukkan nomor pesanan
+        System.out.print("Masukkan Nomor Pesanan : ");
+        int inNomor = scan.nextInt();
+        System.out.println("_______________________");
+            switch (inNomor) {
+                case 1:
+                    // jika nomor satu, maka minuman yang dipilih adalah Juice
+                    menu = " Juice ";
+                    System.out.println("Pilihan anda nomor " +inNomor + menu);
+                    harga = harga + h1;
+                    break;
+                case 2:
+                    // jika nomor dua, maka minuman yang dipilih adalah Coffe
+                    menu = " Coffe ";
+                    System.out.println("Pilihan anda nomor " +inNomor + menu);
+                    harga = harga + h2;
+                    break;
+                case 3:
+                    // jika nomor tiga, maka minuman yang dipilih adalah Air Putih
+                    menu = " Air Putih ";
+                    System.out.println("Pilihan anda nomor " +inNomor + menu);
+                    harga = harga + h3;
+                    break;
+                case 4:
+                    // jika nomor empat, maka minuman yang dipilih adalah Minuman Soda
+                     menu = " Minuman Soda ";
+                    System.out.println("Pilihan anda nomor " +inNomor + menu);
+                    harga = harga + h4;
+                    break;
+//            jika yang dimasukan nomornya tidak ada dalam pilihan maka "Nomor yang dipilih tidak ada di menu."
+                default:
+                    System.out.println("Nomor yang dipilih tidak ada di menu.");
+                    break;
+            }
+//            User diperintahkan untuk memilih lagi atau tidak
+            System.out.println("Apakah anda mau melanjutkan? Y/T");
+            i = scan.next();
+        }
+        System.out.println("_______________________");
+        System.out.println("Total pembayaran sebesar " +harga+".");
+        System.out.println("Terimakasih atas kunjungannya.");
+    }
+}
